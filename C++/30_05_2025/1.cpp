@@ -41,7 +41,7 @@ void swap(Student &a, Student &b) {
     a = b;
     b = temp;
 }
-r
+
 void sortByRollNo(Student arr[], int size) {
     for (int i = 0; i < size - 1; ++i) {
         for (int j = 0; j < size - i - 1; ++j) {

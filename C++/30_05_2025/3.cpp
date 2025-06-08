@@ -2,31 +2,31 @@
 //  to perform addition, subtraction and multiplication operations on complex numbers.
 #include <iostream>
 using namespace std;
-class complex
+class Complex
 {
 public:
     double real, img;
-    complex() : real(0), img(0) {}
-    complex(double r) : real(r), img(0) {}
-    complex(double r, double i) : real(r), img(i) {}
-    complex(const complex &c)
+    Complex() : real(0), img(0) {}
+    Complex(double r) : real(r), img(0) {}
+    Complex(double r, double i) : real(r), img(i) {}
+    Complex(const Complex &c)
     {
         real = c.real;
         img = c.img;
     }
-    complex operator+(const complex &a) const
+    Complex operator+(const Complex &a) const
     {
-        return complex(real + a.real, img + a.img);
+        return Complex(real + a.real, img + a.img);
     }
-    complex operator-(const complex &a) const
+    Complex operator-(const Complex &a) const
     {
-        return complex(real - a.real, img - a.img);
+        return Complex(real - a.real, img - a.img);
     }
-    complex operator*(const complex &a) const
+    Complex operator*(const Complex &a) const
     {
         double r = real * a.real - img * a.img;
         double i = real * a.img + img * a.real;
-        return complex(r, i);
+        return Complex(r, i);
     }
     void display() const
     {
@@ -39,16 +39,16 @@ public:
 };
 int main()
 {
-    complex a, b;
+    Complex a, b;
 
     cout << "Enter the real and imaginary part of first number: ";
     cin >> a.real >> a.img;
 
     cout << "Enter the real and imaginary part of second number: ";
     cin >> b.real >> b.img;
-    complex sum = a + b;
-    complex diff = a - b;
-    complex mul = a * b;
+    Complex sum = a + b;
+    Complex diff = a - b;
+    Complex mul = a * b;
     cout << "sum= ";
     sum.display();
     cout << "\nDifference= ";

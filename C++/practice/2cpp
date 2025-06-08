@@ -1,0 +1,85 @@
+// Implement Integer class by overloading the comparison operators ==, !=, <, and > along with necessary
+// constructors.
+
+// Implement the == operator to compare two Integer objects for equality.
+// Implement the != operator to check if two Integer objects are not equal.
+// Implement the < and > operators to compare two Integer objects to see which one is greater or smaller.
+
+// Example usage:
+// Integer num1(10), num2(20);
+// if (num1 < num2) {
+// cout << "num1 is smaller than num2" << endl;
+// }
+// if (num1 == num2) {
+// 'cout << "num1 is equal to num2" << 'endl;
+// }
+
+#include <iostream>
+using namespace std;
+
+class Integer
+{
+private:
+    int value;
+
+public:
+    // Constructors
+    Integer() : value(0) {}
+    Integer(int val) : value(val) {}
+
+    // Overload == operator
+    bool operator==(const Integer &other) const
+    {
+        return value == other.value;
+    }
+
+    // Overload != operator
+    bool operator!=(const Integer &other) const
+    {
+        return value != other.value;
+    }
+
+    // Overload < operator
+    bool operator<(const Integer &other) const
+    {
+        return value < other.value;
+    }
+
+    // Overload > operator
+    bool operator>(const Integer &other) const
+    {
+        return value > other.value;
+    }
+
+    // Display function (optional)
+    void display() const
+    {
+        cout << value;
+    }
+};
+
+int main()
+{
+    Integer num1(10), num2(20);
+
+    if (num1 < num2)
+    {
+        cout << "num1 is smaller than num2" << endl;
+    }
+
+    if (num1 == num2)
+    {
+        cout << "num1 is equal to num2" << endl;
+    }
+    else
+    {
+        cout << "num1 is not equal to num2" << endl;
+    }
+
+    if (num2 > num1)
+    {
+        cout << "num2 is greater than num1" << endl;
+    }
+
+    return 0;
+}
